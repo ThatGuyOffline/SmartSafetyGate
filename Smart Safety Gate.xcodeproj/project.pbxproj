@@ -1,0 +1,412 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3D436E072316AEAA00F8FAC6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D436E062316AEAA00F8FAC6 /* AppDelegate.swift */; };
+		3D436E092316AEAA00F8FAC6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D436E082316AEAA00F8FAC6 /* ViewController.swift */; };
+		3D436E0C2316AEAA00F8FAC6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3D436E0A2316AEAA00F8FAC6 /* Main.storyboard */; };
+		3D436E0E2316AEAB00F8FAC6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3D436E0D2316AEAB00F8FAC6 /* Assets.xcassets */; };
+		3D436E112316AEAB00F8FAC6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3D436E0F2316AEAB00F8FAC6 /* LaunchScreen.storyboard */; };
+		C264FE0B28435DF6D30E113E /* Pods_Smart_Safety_Gate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1406566FD61CD2CFEEEFC334 /* Pods_Smart_Safety_Gate.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		1406566FD61CD2CFEEEFC334 /* Pods_Smart_Safety_Gate.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Smart_Safety_Gate.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3D436E032316AEAA00F8FAC6 /* Smart Safety Gate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Smart Safety Gate.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3D436E062316AEAA00F8FAC6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		3D436E082316AEAA00F8FAC6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		3D436E0B2316AEAA00F8FAC6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		3D436E0D2316AEAB00F8FAC6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		3D436E102316AEAB00F8FAC6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		3D436E122316AEAB00F8FAC6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6C6C996D818BB9163565B5F8 /* Pods-Smart Safety Gate.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Smart Safety Gate.debug.xcconfig"; path = "Target Support Files/Pods-Smart Safety Gate/Pods-Smart Safety Gate.debug.xcconfig"; sourceTree = "<group>"; };
+		7E160FC22C8DE5995FB6AB6A /* Pods-Smart Safety Gate.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Smart Safety Gate.release.xcconfig"; path = "Target Support Files/Pods-Smart Safety Gate/Pods-Smart Safety Gate.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		3D436E002316AEAA00F8FAC6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C264FE0B28435DF6D30E113E /* Pods_Smart_Safety_Gate.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		14BCE3D8F77918E0BE6D508B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				6C6C996D818BB9163565B5F8 /* Pods-Smart Safety Gate.debug.xcconfig */,
+				7E160FC22C8DE5995FB6AB6A /* Pods-Smart Safety Gate.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		3D436DFA2316AEAA00F8FAC6 = {
+			isa = PBXGroup;
+			children = (
+				3D436E052316AEAA00F8FAC6 /* Smart Safety Gate */,
+				3D436E042316AEAA00F8FAC6 /* Products */,
+				14BCE3D8F77918E0BE6D508B /* Pods */,
+				41E6EE719BDB34277015A9D8 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		3D436E042316AEAA00F8FAC6 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3D436E032316AEAA00F8FAC6 /* Smart Safety Gate.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		3D436E052316AEAA00F8FAC6 /* Smart Safety Gate */ = {
+			isa = PBXGroup;
+			children = (
+				3D436E062316AEAA00F8FAC6 /* AppDelegate.swift */,
+				3D436E082316AEAA00F8FAC6 /* ViewController.swift */,
+				3D436E0A2316AEAA00F8FAC6 /* Main.storyboard */,
+				3D436E0D2316AEAB00F8FAC6 /* Assets.xcassets */,
+				3D436E0F2316AEAB00F8FAC6 /* LaunchScreen.storyboard */,
+				3D436E122316AEAB00F8FAC6 /* Info.plist */,
+			);
+			path = "Smart Safety Gate";
+			sourceTree = "<group>";
+		};
+		41E6EE719BDB34277015A9D8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1406566FD61CD2CFEEEFC334 /* Pods_Smart_Safety_Gate.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		3D436E022316AEAA00F8FAC6 /* Smart Safety Gate */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3D436E152316AEAB00F8FAC6 /* Build configuration list for PBXNativeTarget "Smart Safety Gate" */;
+			buildPhases = (
+				79D957CC765F3735FC3387FE /* [CP] Check Pods Manifest.lock */,
+				3D436DFF2316AEAA00F8FAC6 /* Sources */,
+				3D436E002316AEAA00F8FAC6 /* Frameworks */,
+				3D436E012316AEAA00F8FAC6 /* Resources */,
+				282691619201805057493A4C /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Smart Safety Gate";
+			productName = "Smart Safety Gate";
+			productReference = 3D436E032316AEAA00F8FAC6 /* Smart Safety Gate.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		3D436DFB2316AEAA00F8FAC6 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1030;
+				LastUpgradeCheck = 1030;
+				ORGANIZATIONNAME = "Joseph Shonle";
+				TargetAttributes = {
+					3D436E022316AEAA00F8FAC6 = {
+						CreatedOnToolsVersion = 10.3;
+					};
+				};
+			};
+			buildConfigurationList = 3D436DFE2316AEAA00F8FAC6 /* Build configuration list for PBXProject "Smart Safety Gate" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 3D436DFA2316AEAA00F8FAC6;
+			productRefGroup = 3D436E042316AEAA00F8FAC6 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				3D436E022316AEAA00F8FAC6 /* Smart Safety Gate */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		3D436E012316AEAA00F8FAC6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3D436E112316AEAB00F8FAC6 /* LaunchScreen.storyboard in Resources */,
+				3D436E0E2316AEAB00F8FAC6 /* Assets.xcassets in Resources */,
+				3D436E0C2316AEAA00F8FAC6 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		282691619201805057493A4C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Smart Safety Gate/Pods-Smart Safety Gate-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Smart Safety Gate/Pods-Smart Safety Gate-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Smart Safety Gate/Pods-Smart Safety Gate-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		79D957CC765F3735FC3387FE /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Smart Safety Gate-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		3D436DFF2316AEAA00F8FAC6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3D436E092316AEAA00F8FAC6 /* ViewController.swift in Sources */,
+				3D436E072316AEAA00F8FAC6 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		3D436E0A2316AEAA00F8FAC6 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3D436E0B2316AEAA00F8FAC6 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		3D436E0F2316AEAB00F8FAC6 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3D436E102316AEAB00F8FAC6 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		3D436E132316AEAB00F8FAC6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		3D436E142316AEAB00F8FAC6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		3D436E162316AEAB00F8FAC6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6C6C996D818BB9163565B5F8 /* Pods-Smart Safety Gate.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 9LN577J8LC;
+				INFOPLIST_FILE = "Smart Safety Gate/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "newgate.Smart-Safety-Gate";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		3D436E172316AEAB00F8FAC6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7E160FC22C8DE5995FB6AB6A /* Pods-Smart Safety Gate.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 9LN577J8LC;
+				INFOPLIST_FILE = "Smart Safety Gate/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "newgate.Smart-Safety-Gate";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		3D436DFE2316AEAA00F8FAC6 /* Build configuration list for PBXProject "Smart Safety Gate" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3D436E132316AEAB00F8FAC6 /* Debug */,
+				3D436E142316AEAB00F8FAC6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3D436E152316AEAB00F8FAC6 /* Build configuration list for PBXNativeTarget "Smart Safety Gate" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3D436E162316AEAB00F8FAC6 /* Debug */,
+				3D436E172316AEAB00F8FAC6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 3D436DFB2316AEAA00F8FAC6 /* Project object */;
+}
