@@ -7,5 +7,5 @@ target 'Smart Safety Gate' do
   # Pods for Smart Safety Gate
 
 pod 'CocoaMQTT'
-
+pod 'SwiftSocket'
 end
