@@ -10,16 +10,21 @@ import UIKit
 import CocoaMQTT
 import SwiftSocket
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UITextFieldDelegate {
     
-    let url = "http://172.28.39.96"
-    var mqttClient: CocoaMQTT = CocoaMQTT(clientID: "iOS Device", host: "172.28.39.96", port: 1884)
+    var mqttClient: CocoaMQTT = CocoaMQTT(clientID: "iOS Device", host: "fart", port: 1884)
+
+    @IBOutlet weak var IPTextField: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-
+        IPTextField.delegate = self
         
+    }
+    
+    @IBAction func setIPAddress(_ sender: Any) {
+        mqttClient.host = IPTextField.text ?? ""
     }
     
 
@@ -34,13 +39,15 @@ class ViewController: UIViewController {
     }
     
     @IBAction func gpioSW40(_ sender: UISwitch) {
-        if sender.isOn {
-            mqttClient.publish("rpi/gpio", withString: "On")
-            
-        }
-        else {
-            mqttClient.publish("rpi/gpio", withString: "off")
-        }
+        let json = "{\"state\": \(sender.isOn)}"
+        mqttClient.publish("rpi/gpio", withString: json)
+        
+    }
+    
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
     }
 }
 
