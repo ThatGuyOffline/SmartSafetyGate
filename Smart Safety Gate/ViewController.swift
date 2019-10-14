@@ -14,17 +14,17 @@ class ViewController: UIViewController, UITextFieldDelegate {
     
     var mqttClient: CocoaMQTT = CocoaMQTT(clientID: "iOS Device", host: "fart", port: 1884)
 
-    @IBOutlet weak var IPTextField: UITextField!
+    @IBOutlet weak var IPTextField: UITextField?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        IPTextField.delegate = self
+        IPTextField?.delegate = self
         
     }
     
     @IBAction func setIPAddress(_ sender: Any) {
-        mqttClient.host = IPTextField.text ?? ""
+        mqttClient.host = IPTextField?.text ?? ""
     }
     
 
