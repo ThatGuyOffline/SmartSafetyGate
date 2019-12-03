@@ -1,4 +1,4 @@
 ${PODS_ROOT}/Target Support Files/Pods-Smart Safety Gate/Pods-Smart Safety Gate-frameworks.sh
 ${BUILT_PRODUCTS_DIR}/CocoaAsyncSocket/CocoaAsyncSocket.framework
 ${BUILT_PRODUCTS_DIR}/CocoaMQTT/CocoaMQTT.framework
-${BUILT_PRODUCTS_DIR}/SwiftSocket/SwiftSocket.framework
+${BUILT_PRODUCTS_DIR}/JGProgressHUD/JGProgressHUD.framework

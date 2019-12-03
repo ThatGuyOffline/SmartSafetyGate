@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="hWE-yU-43x">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="hWE-yU-43x">
     <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -73,7 +73,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="131.8840579710145" y="128.57142857142856"/>
+            <point key="canvasLocation" x="1432" y="129"/>
         </scene>
         <!--Main UI-->
         <scene sceneID="Gst-bI-jb6">
@@ -116,6 +116,7 @@
                                 <state key="normal" title="Light" image="122-200_70034"/>
                                 <connections>
                                     <action selector="buttonTouched:" destination="3Rm-Ci-Cj1" eventType="touchUpInside" id="5ps-wL-5pM"/>
+                                    <action selector="lightButtonTouched:" destination="3Rm-Ci-Cj1" eventType="touchUpInside" id="Vt6-Aq-c0Q"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LlI-It-D4D">
@@ -127,6 +128,7 @@
                                 <state key="normal" title="Button" image="lock"/>
                                 <connections>
                                     <action selector="buttonTouched:" destination="3Rm-Ci-Cj1" eventType="touchUpInside" id="qkx-hI-X7c"/>
+                                    <action selector="lockButtonTouched:" destination="3Rm-Ci-Cj1" eventType="touchUpInside" id="FhE-z4-YWL"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -151,12 +153,26 @@
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="QhD-Nt-NFv">
-                        <barButtonItem key="rightBarButtonItem" systemItem="action" id="UF7-8L-sCe">
+                        <barButtonItem key="leftBarButtonItem" systemItem="refresh" id="lCF-2A-qcz">
                             <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
                             <connections>
-                                <segue destination="BYZ-38-t0r" kind="show" id="h6J-uy-bZb"/>
+                                <action selector="updateDataButton:" destination="3Rm-Ci-Cj1" id="LYP-Jy-vyZ"/>
                             </connections>
                         </barButtonItem>
+                        <rightBarButtonItems>
+                            <barButtonItem systemItem="action" id="UF7-8L-sCe">
+                                <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="show" id="h6J-uy-bZb"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem systemItem="organize" id="o7F-xV-eOv" userLabel="Details">
+                                <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <connections>
+                                    <segue destination="yGM-oq-1Ap" kind="show" id="eHk-DO-Eo8"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
@@ -168,6 +184,51 @@
             </objects>
             <point key="canvasLocation" x="-955.07246376811599" y="128.57142857142856"/>
         </scene>
+        <!--Details Table View Controller-->
+        <scene sceneID="s4d-xj-HNd">
+            <objects>
+                <tableViewController id="yGM-oq-1Ap" customClass="DetailsTableViewController" customModule="Smart_Safety_Gate" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Jfr-71-xFg">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="detailCell" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="detailCell" textLabel="W4f-kO-ykq" detailTextLabel="3YC-9X-WBN" style="IBUITableViewCellStyleValue1" id="n6h-49-N3p">
+                                <rect key="frame" x="0.0" y="28" width="414" height="43.666667938232422"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="n6h-49-N3p" id="hkl-zW-BwU">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.666667938232422"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="ExampleDetail" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="W4f-kO-ykq">
+                                            <rect key="frame" x="20.000000000000007" y="11.999999999999998" width="108.66666666666667" height="20.333333333333332"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Example Metric" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="3YC-9X-WBN">
+                                            <rect key="frame" x="276" y="11.999999999999998" width="118" height="20.333333333333332"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="yGM-oq-1Ap" id="yCW-kP-CC5"/>
+                            <outlet property="delegate" destination="yGM-oq-1Ap" id="4Fw-bb-51p"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="efN-VM-2gu"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8uE-p7-nob" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="259" y="128"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="QQm-Uy-K0B">
             <objects>
@@ -175,7 +236,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="d5l-em-iK1">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="barTintColor" systemColor="systemIndigoColor" red="0.34509803921568627" green="0.33725490196078434" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="barTintColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </navigationBar>
                     <connections>
                         <segue destination="3Rm-Ci-Cj1" kind="relationship" relationship="rootViewController" id="B08-8c-LzS"/>
