@@ -24,18 +24,17 @@ class MainViewController: UIViewController, CocoaMQTTDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        
         var defaultHeight = UserDefaults.standard.integer(forKey: "autoHeight")
-        defaultHeight = defaultHeight == 0 ? 36 : defaultHeight
+        defaultHeight = defaultHeight == 0 ? 100 : defaultHeight
         inchesLabel.text = "\(defaultHeight)\""
         heightSlider.value = Float(defaultHeight)
         mqttClient.delegate = self
-        print(mqttClient.connect())
+        
         mqttClient.subscribe("rpiToIos")
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        
+        print(mqttClient.connect(timeout: 10))
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -146,7 +145,7 @@ class MainViewController: UIViewController, CocoaMQTTDelegate {
         }
 
         func mqttDidDisconnect(_ mqtt: CocoaMQTT, withError err: Error?) {
-            //TRACE("\(err.description)")
+            print(err?.localizedDescription)
             print("fail")
         }
     
