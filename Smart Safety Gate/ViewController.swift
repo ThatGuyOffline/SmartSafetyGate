@@ -12,7 +12,7 @@ import CocoaMQTT
 class ViewController: UIViewController, UITextFieldDelegate, CocoaMQTTDelegate {
     
     
-    var mqttClient: CocoaMQTT = CocoaMQTT(clientID: "iOS Device", host: "172.20.10.4", port: 1884)
+    var mqttClient: CocoaMQTT = CocoaMQTT(clientID: "iOS Device", host: "127.8.8.1", port: 1883)
 
     @IBOutlet weak var IPTextField: UITextField?
     
@@ -43,12 +43,18 @@ class ViewController: UIViewController, UITextFieldDelegate, CocoaMQTTDelegate {
         mqttClient.disconnect()
     }
     
-    @IBAction func gpioSW40(_ sender: UISwitch) {
-        let json = "{\"state\": \(sender.isOn)}"
-        mqttClient.publish("rpi/light", withString: json)
+    
+    @IBAction func lightTest(_ sender: UISwitch) {
+        //if switch == on, publishes to tell light to turn on
+        if sender.isOn {
+            mqttClient.publish("iosToRpi", withString: "LEDOn")
+        }
+        //if switch == off, publishes to tell light to turn off
+        else {
+            mqttClient.publish("iosToRpi", withString: "LEDOff")
+        }
         
     }
-    
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
@@ -116,4 +122,3 @@ class ViewController: UIViewController, UITextFieldDelegate, CocoaMQTTDelegate {
         print("fail")
     }
 }
-
