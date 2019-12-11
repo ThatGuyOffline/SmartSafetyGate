@@ -58,7 +58,7 @@ class MainViewController: UIViewController, CocoaMQTTDelegate {
         }
         loadingHud.show(in: (self.navigationController?.view!)!)
         mqttClient.publish("iosToRpi", withString: "SetSensorHeight\(UserDefaults.standard.integer(forKey: "autoHeight"))")
-        mqttClient.publish("iosToRpi", withString: "requestAutoLock")
+        mqttClient.publish("iosToRpi", withString: "RequestAutoLock.txt")
         loadingHud.dismiss()
     }
     
