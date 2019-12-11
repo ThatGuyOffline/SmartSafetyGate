@@ -24,18 +24,18 @@ class MainViewController: UIViewController, CocoaMQTTDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        print(mqttClient.connect())
+        
         var defaultHeight = UserDefaults.standard.integer(forKey: "autoHeight")
         defaultHeight = defaultHeight == 0 ? 36 : defaultHeight
         inchesLabel.text = "\(defaultHeight)\""
         heightSlider.value = Float(defaultHeight)
         mqttClient.delegate = self
+        print(mqttClient.connect())
+        mqttClient.subscribe("rpiToIos")
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        print(mqttClient.connect())
-        mqttClient.subscribe("recommendation")
-        mqttClient.publish("iosToRpi", withString: "recommendation")
+        
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -43,28 +43,22 @@ class MainViewController: UIViewController, CocoaMQTTDelegate {
     }
     
     @IBAction func lockButtonTouched(_ sender: Any) {
-        mqttClient.publish("iosToRpi", withString: "Unlock")
+        mqttClient.publish("iosToRpi", withString: "Lock")
     }
     
     @IBAction func lightButtonTouched(_ sender: Any) {
-        //if switch == on, publishes to tell light to turn on
-        if lightIsOff {
-            mqttClient.publish("iosToRpi", withString: "LEDOn")
-            lightIsOff = false
-        }
-        //if switch == off, publishes to tell light to turn off
-        else {
-            mqttClient.publish("iosToRpi", withString: "LEDOff")
-            lightIsOff = true
-        }
+        mqttClient.publish("iosToRpi", withString: "LED")
     }
     
     
     @IBAction func updateDataButton(_ sender: Any) {
         self.loadingHud.textLabel.text = "Updating Settings"
-
+        if (mqttClient.connState == .disconnected || mqttClient.connState == .initial) {
+            print(mqttClient.connect())
+        }
         loadingHud.show(in: (self.navigationController?.view!)!)
         mqttClient.publish("iosToRpi", withString: "SetSensorHeight\(UserDefaults.standard.integer(forKey: "autoHeight"))")
+        mqttClient.publish("iosToRpi", withString: "requestAutoLock")
         loadingHud.dismiss()
     }
     
@@ -83,6 +77,18 @@ class MainViewController: UIViewController, CocoaMQTTDelegate {
         sender.setValue(sender.value.rounded(.down), animated: true)
         inchesLabel.text = "\(Int(sender.value)) cm"
         UserDefaults.standard.set(Int(sender.value), forKey: "autoHeight")
+    }
+    
+    func autoLockAlert(recommendation: String) {
+        let actionSheet = UIAlertController(title: "Automatic Locking Recommendation", message: "Do you want to set automatic locking for \(recommendation)?", preferredStyle: .alert)
+        let yes: UIAlertAction = UIAlertAction(title: "Yes", style: .default)
+        { action -> Void in
+            self.mqttClient.publish("iosToRpi", withString: "Yes")
+        }
+        let no: UIAlertAction = UIAlertAction(title: "No", style: .default) { action -> Void in }
+        actionSheet.addAction(yes)
+        actionSheet.addAction(no)
+        self.present(actionSheet, animated: true)
     }
     
     func mqtt(_ mqtt: CocoaMQTT, didConnectAck ack: CocoaMQTTConnAck) {
@@ -111,6 +117,11 @@ class MainViewController: UIViewController, CocoaMQTTDelegate {
             let topic = message.topic
             let pl = String(bytes: message.payload, encoding: .utf8)
             print("\(topic): \(pl ?? "failed conversion")")
+            if (topic == "rpiToIos") {
+                self.autoLockAlert(recommendation: pl ?? "")
+                
+            }
+            
             
         }
         

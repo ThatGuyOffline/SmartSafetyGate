@@ -84,6 +84,10 @@ class DetailsTableViewController: UITableViewController, CocoaMQTTDelegate {
         let topic = message.topic
         let pl = String(bytes: message.payload, encoding: .utf8)
         print("\(topic): \(pl ?? "failed conversion")")
+        if (topic == "rpiToIos") {
+            let actionSheet = UIAlertController(title: "Automatic Locking Recommendation", message: nil, preferredStyle: .alert)
+            
+        }
         
         
         
