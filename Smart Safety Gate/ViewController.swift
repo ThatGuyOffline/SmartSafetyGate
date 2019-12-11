@@ -45,14 +45,14 @@ class ViewController: UIViewController, UITextFieldDelegate, CocoaMQTTDelegate {
     
     
     @IBAction func lightTest(_ sender: UISwitch) {
-        //if switch == on, publishes to tell light to turn on
-        if sender.isOn {
-            mqttClient.publish("iosToRpi", withString: "LEDOn")
-        }
-        //if switch == off, publishes to tell light to turn off
-        else {
-            mqttClient.publish("iosToRpi", withString: "LEDOff")
-        }
+        mqttClient.publish("iosToRpi", withString: "LED")
+//        if sender.isOn {
+//            mqttClient.publish("iosToRpi", withString: "LEDOn")
+//        }
+//        //if switch == off, publishes to tell light to turn off
+//        else {
+//            mqttClient.publish("iosToRpi", withString: "LEDOff")
+//        }
         
     }
     
