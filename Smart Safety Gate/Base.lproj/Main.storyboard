@@ -89,24 +89,6 @@
                                     <constraint firstAttribute="height" constant="385" id="gG2-f0-Vki"/>
                                 </constraints>
                             </imageView>
-                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="100" minValue="1" maxValue="200" translatesAutoresizingMaskIntoConstraints="NO" id="HKl-eZ-dcV">
-                                <rect key="frame" x="14" y="660" width="386" height="31"/>
-                                <connections>
-                                    <action selector="sliderValueChanged:" destination="3Rm-Ci-Cj1" eventType="valueChanged" id="Xcm-gG-R1w"/>
-                                </connections>
-                            </slider>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Automatic Unlock Height:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NEt-tZ-aHv">
-                                <rect key="frame" x="25" y="624.66666666666663" width="233" height="25.333333333333371"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="48&quot;" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lFH-kJ-vqw">
-                                <rect key="frame" x="266" y="626" width="33.666666666666686" height="24"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xQs-Nd-YIE">
                                 <rect key="frame" x="218" y="209" width="160" height="160"/>
                                 <constraints>
@@ -134,20 +116,13 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="HKl-eZ-dcV" firstAttribute="leading" secondItem="D6r-04-DKw" secondAttribute="leading" constant="16" id="BXX-He-dYH"/>
-                            <constraint firstItem="lFH-kJ-vqw" firstAttribute="leading" secondItem="NEt-tZ-aHv" secondAttribute="trailing" constant="8" id="FVF-l0-AV2"/>
                             <constraint firstItem="js2-5z-gIz" firstAttribute="leading" secondItem="D6r-04-DKw" secondAttribute="leading" constant="25" id="G76-E7-flC"/>
                             <constraint firstItem="LlI-It-D4D" firstAttribute="top" secondItem="D6r-04-DKw" secondAttribute="top" constant="209" id="Lh1-Uf-f24"/>
-                            <constraint firstItem="NEt-tZ-aHv" firstAttribute="leading" secondItem="D6r-04-DKw" secondAttribute="leading" constant="25" id="M7c-xd-YHY"/>
                             <constraint firstItem="D6r-04-DKw" firstAttribute="trailing" secondItem="js2-5z-gIz" secondAttribute="trailing" constant="25" id="eee-R1-X6r"/>
                             <constraint firstItem="D6r-04-DKw" firstAttribute="trailing" secondItem="xQs-Nd-YIE" secondAttribute="trailing" constant="36" id="get-Na-BNJ"/>
-                            <constraint firstItem="D6r-04-DKw" firstAttribute="bottom" secondItem="NEt-tZ-aHv" secondAttribute="bottom" constant="75" id="hBM-kb-12T"/>
                             <constraint firstItem="LlI-It-D4D" firstAttribute="leading" secondItem="D6r-04-DKw" secondAttribute="leading" constant="36" id="hqi-2e-nfA"/>
                             <constraint firstItem="js2-5z-gIz" firstAttribute="top" secondItem="oj9-pl-rcc" secondAttribute="top" constant="-51" id="jcI-WC-dDC"/>
-                            <constraint firstItem="D6r-04-DKw" firstAttribute="trailing" secondItem="HKl-eZ-dcV" secondAttribute="trailing" constant="16" id="mnc-a7-csY"/>
-                            <constraint firstItem="D6r-04-DKw" firstAttribute="bottom" secondItem="lFH-kJ-vqw" secondAttribute="bottom" constant="75" id="n7w-4y-ExM"/>
                             <constraint firstItem="xQs-Nd-YIE" firstAttribute="top" secondItem="D6r-04-DKw" secondAttribute="top" constant="209" id="vQJ-DA-4Qs"/>
-                            <constraint firstItem="D6r-04-DKw" firstAttribute="bottom" secondItem="HKl-eZ-dcV" secondAttribute="bottom" constant="35" id="xV2-lO-SXx"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="D6r-04-DKw"/>
                     </view>
@@ -161,10 +136,6 @@
                         </barButtonItem>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
-                    <connections>
-                        <outlet property="heightSlider" destination="HKl-eZ-dcV" id="4Cq-fT-dE9"/>
-                        <outlet property="inchesLabel" destination="lFH-kJ-vqw" id="QgC-Fn-lXj"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rJP-HS-iHI" sceneMemberID="firstResponder"/>
             </objects>

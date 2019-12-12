@@ -13,8 +13,8 @@ import JGProgressHUD
 
 class MainViewController: UIViewController, CocoaMQTTDelegate {
     
-    @IBOutlet weak var heightSlider: UISlider!
-    @IBOutlet weak var inchesLabel: UILabel!
+    //@IBOutlet weak var heightSlider: UISlider!
+    //@IBOutlet weak var inchesLabel: UILabel!
     
     var mqttClient: CocoaMQTT = CocoaMQTT(clientID: "iOS Device", host: "192.168.43.18", port: 1883)
     
@@ -26,11 +26,11 @@ class MainViewController: UIViewController, CocoaMQTTDelegate {
         // Do any additional setup after loading the view.
         var defaultHeight = UserDefaults.standard.integer(forKey: "autoHeight")
         defaultHeight = defaultHeight == 0 ? 100 : defaultHeight
-        inchesLabel.text = "\(defaultHeight)\""
-        heightSlider.value = Float(defaultHeight)
+        //inchesLabel.text = "\(defaultHeight)\""
+        //heightSlider.value = Float(defaultHeight)
         mqttClient.delegate = self
         
-        mqttClient.subscribe("rpiToIos")
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -56,6 +56,7 @@ class MainViewController: UIViewController, CocoaMQTTDelegate {
             print(mqttClient.connect())
         }
         loadingHud.show(in: (self.navigationController?.view!)!)
+        mqttClient.subscribe("rpiToIos")
         mqttClient.publish("iosToRpi", withString: "SetSensorHeight\(UserDefaults.standard.integer(forKey: "autoHeight"))")
         mqttClient.publish("iosToRpi", withString: "RequestAutoLock.txt")
         loadingHud.dismiss()
@@ -72,14 +73,21 @@ class MainViewController: UIViewController, CocoaMQTTDelegate {
                             })
         })
     }
-    @IBAction func sliderValueChanged(_ sender: UISlider) {
-        sender.setValue(sender.value.rounded(.down), animated: true)
-        inchesLabel.text = "\(Int(sender.value)) cm"
-        UserDefaults.standard.set(Int(sender.value), forKey: "autoHeight")
-    }
+//    @IBAction func sliderValueChanged(_ sender: UISlider) {
+//        sender.setValue(sender.value.rounded(.down), animated: true)
+//        inchesLabel.text = "\(Int(sender.value)) cm"
+//        UserDefaults.standard.set(Int(sender.value), forKey: "autoHeight")
+//    }
     
     func autoLockAlert(recommendation: String) {
-        let actionSheet = UIAlertController(title: "Automatic Locking Recommendation", message: "Do you want to set automatic locking for \(recommendation)?", preferredStyle: .alert)
+        let df = DateFormatter()
+        let split = recommendation.split(separator: " ")
+        let day = df.weekdaySymbols[(Int(split[0])! + 13) % 12]
+        let hour = String(Int(split[1])! % 12)
+        let ampm = (Int(split[1])! >= 12) ? "PM" : "AM"
+        let minute = String(split[2])
+        let recString = "\(day) at \(hour):\(minute) \(ampm)"
+        let actionSheet = UIAlertController(title: "Automatic Locking Recommendation", message: "Do you want to set automatic locking for \(recString)?", preferredStyle: .alert)
         let yes: UIAlertAction = UIAlertAction(title: "Yes", style: .default)
         { action -> Void in
             self.mqttClient.publish("iosToRpi", withString: "Yes")
