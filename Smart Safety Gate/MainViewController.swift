@@ -83,7 +83,8 @@ class MainViewController: UIViewController, CocoaMQTTDelegate {
         let df = DateFormatter()
         let split = recommendation.split(separator: " ")
         let day = df.weekdaySymbols[(Int(split[0])! + 13) % 12]
-        let hour = String(Int(split[1])! % 12)
+        var hour = String(Int(split[1])! % 12)
+        if (hour == "0") {hour = "12"}
         let ampm = (Int(split[1])! >= 12) ? "PM" : "AM"
         let minute = String(split[2])
         let recString = "\(day) at \(hour):\(minute) \(ampm)"
